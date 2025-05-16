@@ -1,4 +1,5 @@
-﻿using Interfaces;
+﻿using System;
+using Interfaces;
 using UnityEngine;
 
 namespace Movement
@@ -16,7 +17,9 @@ namespace Movement
 
         public void Move(Vector3 direction)
         {
-            bool isSprinting = Input.GetKey(KeyCode.LeftShift);
+            //TODO: Add controller input for sprinting ( idk which button unity recognizes as sprint)
+            bool isSprinting = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.JoystickButton2);
+           
             float speed;
             if (isSprinting)
                 speed = walkSpeed * sprintMultiplier;

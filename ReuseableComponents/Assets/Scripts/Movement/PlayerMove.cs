@@ -14,15 +14,11 @@ namespace Movement
             movement = GetComponent<IMovement>();
             movementInput = GetComponent<IMovementInput>();
         }
-
-        private void Start()
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-        }
-
         private void Update()
         {
-            Vector3 dir = movementInput.GetMovementDirection();
+            float mouseX = Input.GetAxis("Mouse X");
+            transform.Rotate(Vector3.up * mouseX * 3f); // 3f is sensitivity, adjust as needed
+            Vector3 dir = transform.TransformDirection(movementInput.GetMovementDirection());
             movement.Move(dir);
         }
     }
