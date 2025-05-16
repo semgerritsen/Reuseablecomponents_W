@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace Movement
 {
-    [RequireComponent(typeof(IMovement))]
-    [RequireComponent(typeof(IMovementInput))]
+    // [RequireComponent(typeof(IMovement))]
+    // [RequireComponent(typeof(IMovementInput))]
     public class PlayerMove : MonoBehaviour
     {
         private IMovement movement;
