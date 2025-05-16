@@ -1,16 +1,17 @@
+using Interfaces;
 using UnityEngine;
 
+//todo: use Imovement interface
 namespace Movement
 {
     [RequireComponent(typeof(CharacterController))]
-    public abstract class BaseMovement : MonoBehaviour
+    public class BaseMovement : MonoBehaviour, IMovement
     {
+        [Header("Movement speed")]
         [SerializeField] private float moveSpeed = 5f;
-        protected CharacterController controller;
-        protected virtual void Awake()
-        {
-            controller = GetComponent<CharacterController>();
-        }
+        
+        private CharacterController controller;
+        private void Awake() => controller = GetComponent<CharacterController>();
 
         public void Move(Vector3 direction)
         {

@@ -1,32 +1,29 @@
-﻿using System;
+﻿using Interfaces;
 using UnityEngine;
 
 namespace Movement
 {
-    [RequireComponent(typeof(Movement.BaseMovement))]
+    [RequireComponent(typeof(IMovement))]
+    [RequireComponent(typeof(IMovementInput))]
     public class PlayerMove : MonoBehaviour
     {
-        [SerializeField] float rotationSpeed = 700f;
-        
-        private BaseMovement baseMovement;
-
-        public void Start()
+        private IMovement movement;
+        private IMovementInput movementInput;
+        private void Awake()
         {
-            baseMovement = GetComponent<BaseMovement>();
+            movement = GetComponent<IMovement>();
+            movementInput = GetComponent<IMovementInput>();
         }
 
-        public void Update()
+        private void Start()
         {
-            float h = Input.GetAxis("Horizontal");
-            float v = Input.GetAxis("Vertical");
+            Cursor.lockState = CursorLockMode.Locked;
+        }
 
-            Vector3 inputDirection = new Vector3(h, 0, v);
-            inputDirection = transform.TransformDirection(inputDirection);
-
-            baseMovement.Move(inputDirection);
-
-            float mouseX = Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime;
-            transform.Rotate(0, mouseX, 0);
+        private void Update()
+        {
+            Vector3 dir = movementInput.GetMovementDirection();
+            movement.Move(dir);
         }
     }
 }
