@@ -16,8 +16,6 @@ namespace Movement
         }
         private void Update()
         {
-            float mouseX = Input.GetAxis("Mouse X");
-            transform.Rotate(Vector3.up * mouseX * 3f); // 3f is sensitivity, adjust as needed
             Vector3 dir = transform.TransformDirection(movementInput.GetMovementDirection());
             movement.Move(dir);
         }

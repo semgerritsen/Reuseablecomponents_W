@@ -30,6 +30,7 @@ public class OnButtonClick : MonoBehaviour
         player.AddComponent<SwiftMovement>();
         player.AddComponent<ControllerInput>();
         player.AddComponent<PlayerMove>();
+        // player.GetComponentInChildren<Camera>()?.gameObject.AddComponent<ControllerLook>();
         Cursor.lockState = CursorLockMode.Locked;
         inputPanel.SetActive(false);
     }
@@ -39,6 +40,7 @@ public class OnButtonClick : MonoBehaviour
         player.AddComponent<SwiftMovement>();
         player.AddComponent<KeyboardInput>();
         player.AddComponent<PlayerMove>();
+        player.GetComponentInChildren<Camera>()?.gameObject.AddComponent<MouseLook>();
         Cursor.lockState = CursorLockMode.Locked;
         inputPanel.SetActive(false);
     }
