@@ -19,6 +19,11 @@ public class OnButtonClick : MonoBehaviour
             Debug.LogError("Scene name is not set in the inspector.");
     }
 
+    public void Start()
+    {
+        Time.timeScale = 0f;
+    }
+
     public void OnApplicationQuit()
     {
         Application.Quit();
@@ -33,6 +38,7 @@ public class OnButtonClick : MonoBehaviour
         // player.GetComponentInChildren<Camera>()?.gameObject.AddComponent<ControllerLook>();
         Cursor.lockState = CursorLockMode.Locked;
         inputPanel.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     public void KeyboardInputChosen()
@@ -43,5 +49,6 @@ public class OnButtonClick : MonoBehaviour
         player.GetComponentInChildren<Camera>()?.gameObject.AddComponent<MouseLook>();
         Cursor.lockState = CursorLockMode.Locked;
         inputPanel.SetActive(false);
+        Time.timeScale = 1f;
     }
 }
