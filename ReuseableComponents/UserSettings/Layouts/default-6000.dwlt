@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 125
+  controlID: 1127
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 17
+  controlID: 1034
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 72
+  controlID: 1058
   draggingID: 0
 --- !u!114 &10
 MonoBehaviour:
@@ -803,9 +803,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 69.29579, y: 2.2937267, z: 48.702396}
+    m_Target: {x: 442.84, y: 25.2, z: 199.17}
     speed: 2
-    m_Value: {x: 69.29579, y: 2.2937267, z: 48.702396}
+    m_Value: {x: 442.84, y: 25.2, z: 199.17}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -851,13 +851,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.07662279, y: 0.9230319, z: -0.25307307, w: 0.27946687}
+    m_Target: {x: -0.025947496, y: -0.93460214, z: 0.06965755, w: -0.34793705}
     speed: 2
-    m_Value: {x: 0.07662279, y: 0.923032, z: -0.25307307, w: 0.2794669}
+    m_Value: {x: 0.025947494, y: 0.93460214, z: -0.06965755, w: 0.34793705}
   m_Size:
-    m_Target: 685.68567
+    m_Target: 2.5914633
     speed: 2
-    m_Value: 685.68567
+    m_Value: 2.5914633
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -932,7 +932,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 1618fefffe1ffeff9a25feff9432feff963dfeffd84bfeff5650feff44c4feff68c4feff8cc4feffb6c4feff32c5feff56c5feff6ec5feff3cc9feff70c9feffbac9feffd2c9fefffcc9feff20cafeff54cafeffb6cafeff7ecbfeffa4cbfeffbccbfefff0cbfeffaacdfeffd8cdfeff1acefeff6acefeffdacefeff28cffeff4ccffeff70cffeffe4d0fefffcd0feff14d1feffccd1feff2a5affff20fbffffb2a6000020a700007ca70000aca70000bc2c0200
+      m_ExpandedIDs: 44c4ffffd2c9ffff4acbffffeecbffff5ccdffff00ceffff6ecfffff12d0ffffd2d8ffff20fbffff02a8000072c60000ecc60000fec60000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1004,7 +1004,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scenes
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1014,16 +1014,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\gerri\Documents\school\Unity\Reuseablecomponents_W\ReuseableComponents
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: a0a90000
-    m_LastClickedID: 43424
-    m_ExpandedIDs: 0000000080aa000082aa000084aa000086aa000088aa00008aaa00008caa00008eaa000090aa000092aa000094aa000096aa000098aa00009aaa00009caa00009eaa0000a0aa0000a2aa0000a4aa0000a6aa0000a8aa0000aaaa0000acaa0000aeaa0000b0aa0000b2aa0000b4aa0000b6aa0000
+    scrollPos: {x: 0, y: 472.40002}
+    m_SelectedIDs: a0ac0000
+    m_LastClickedID: 44192
+    m_ExpandedIDs: 0000000050aa000052aa000054aa000056aa000058aa00005aaa00005caa00005eaa000060aa000062aa000064aa000066aa000068aa00006aaa00006caa00006eaa000070aa000072aa000074aa000076aa000078aa00007aaa00007caa00007eaa000080aa000082aa000084aa000086aa0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1052,7 +1052,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000080aa000082aa000084aa000086aa000088aa00008aaa00008caa00008eaa000090aa000092aa000094aa000096aa000098aa00009aaa00009caa00009eaa0000a0aa0000a2aa0000a4aa0000a6aa0000a8aa0000aaaa0000acaa0000aeaa0000b0aa0000b2aa0000b4aa0000b6aa0000
+    m_ExpandedIDs: 0000000050aa000052aa000054aa000056aa000058aa00005aaa00005caa00005eaa000060aa000062aa000064aa000066aa000068aa00006aaa00006caa00006eaa000070aa000072aa000074aa000076aa000078aa00007aaa00007caa00007eaa000080aa000082aa000084aa000086aa0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

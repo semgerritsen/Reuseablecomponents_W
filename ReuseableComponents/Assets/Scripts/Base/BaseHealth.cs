@@ -19,7 +19,6 @@ namespace DefaultNamespace
             health -= amount;
             if (health <= 0)
             {
-                // Die();
             }
         }
 

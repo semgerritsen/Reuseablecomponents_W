@@ -25,7 +25,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 15064
+  controlID: 5279
   draggingID: 0
 --- !u!114 &2
 MonoBehaviour:
@@ -96,7 +96,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 15065
+  controlID: 5280
   draggingID: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -577,9 +577,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 443.58206, y: 26.39298, z: 176.50807}
+    m_Target: {x: 443.49957, y: 26.630875, z: 175.75539}
     speed: 2
-    m_Value: {x: 443.58206, y: 26.39298, z: 176.50807}
+    m_Value: {x: 443.49957, y: 26.630875, z: 175.75539}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -625,20 +625,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.109501496, y: -0.18144897, z: 0.020322349, w: -0.97710365}
+    m_Target: {x: 0.43974453, y: -0.19447456, z: 0.09815067, w: 0.8713038}
     speed: 2
-    m_Value: {x: -0.1094738, y: -0.18261601, z: 0.020453136, w: -0.9768564}
+    m_Value: {x: -0.43974453, y: 0.19447456, z: -0.09815067, w: -0.8713038}
   m_Size:
-    m_Target: 1.1583526
+    m_Target: 0.36472955
     speed: 2
-    m_Value: 1.2129346
+    m_Value: 0.36472955
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 0.6866009
-    m_SpeedNormalized: 0.34000045
+    m_Speed: 2
+    m_SpeedNormalized: 1
     m_SpeedMin: 0.01
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -684,8 +684,8 @@ MonoBehaviour:
     y: 368
     width: 725.6
     height: 348.8
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 226}
+  m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 2}
@@ -715,7 +715,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 15117
+  controlID: 5302
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -736,8 +736,8 @@ MonoBehaviour:
     y: 0
     width: 420
     height: 343.2
-  m_MinSize: {x: 202, y: 226}
-  m_MaxSize: {x: 4002, y: 4026}
+  m_MinSize: {x: 201, y: 226}
+  m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 9}
   m_Panes:
   - {fileID: 9}
@@ -782,26 +782,26 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 0874fefff481feff5eb0fefff0c3feffe2d1feff26e6feff3aecfeff7cedfeff6ceffeff90effeff9aeffefffe26ffff6849ffff20fbffffbea700009ece0000f8cf0000
+      m_SelectedIDs: 04c10000
+      m_LastClickedID: 49412
+      m_ExpandedIDs: d6adfeff10affeff9ab0feff10b6feff1efbffff20fbfffffea7000010a80000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Optic_A
-        m_OriginalName: Optic_A
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -99400
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
-        m_ClientGUIView: {fileID: 8}
+        m_ClientGUIView: {fileID: 4}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -883,7 +883,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Low Poly AR Weapon Pack 3/Prefabs/Weapons/AR_PreSet
+    - Assets/Scenes
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -893,16 +893,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Low Poly AR Weapon Pack 3/Prefabs/Weapons/AR_PreSet
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\gerri\Documents\school\Unity\Reuseablecomponents_W\ReuseableComponents
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 616.4}
-    m_SelectedIDs: d0e90000
-    m_LastClickedID: 59856
-    m_ExpandedIDs: 0000000080aa000082aa000084aa000086aa000088aa00008aaa00008caa00008eaa000090aa000092aa000094aa000096aa000098aa00009aaa00009caa00009eaa0000a0aa0000a2aa0000a4aa0000a6aa0000a8aa0000aaaa0000acaa0000aeaa0000b0aa0000b2aa0000b4aa0000b6aa000010cd000088e7000008e8000024e80000d8e8000028e9000042e9000088e900009ee9000002ea000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 328.40002}
+    m_SelectedIDs: 92ac0000
+    m_LastClickedID: 44178
+    m_ExpandedIDs: 0000000050aa000052aa000054aa000056aa000058aa00005aaa00005caa00005eaa000060aa000062aa000064aa000066aa000068aa00006aaa00006caa00006eaa000070aa000072aa000074aa000076aa000078aa00007aaa00007caa00007eaa000080aa000082aa000084aa000086aa000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -931,7 +931,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000080aa000082aa000084aa000086aa000088aa00008aaa00008caa00008eaa000090aa000092aa000094aa000096aa000098aa00009aaa00009caa00009eaa0000a0aa0000a2aa0000a4aa0000a6aa0000a8aa0000aaaa0000acaa0000aeaa0000b0aa0000b2aa0000b4aa0000b6aa000000ca9a3bffffff7f
+    m_ExpandedIDs: 0000000050aa000052aa000054aa000056aa000058aa00005aaa00005caa00005eaa000060aa000062aa000064aa000066aa000068aa00006aaa00006caa00006eaa000070aa000072aa000074aa000076aa000078aa00007aaa00007caa00007eaa000080aa000082aa000084aa000086aa000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -957,10 +957,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: 26b9000082d50000
+    m_SelectedInstanceIDs: 04c10000
+    m_LastClickedInstanceID: 49412
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: 26b9000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1044,8 +1044,8 @@ MonoBehaviour:
     y: 0
     width: 390.40002
     height: 716.8
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 76}
+  m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
