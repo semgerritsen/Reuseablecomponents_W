@@ -8,9 +8,9 @@ namespace Movement
     public class BaseMovement : MonoBehaviour, IMovement
     {
         [Header("Movement speed")]
-        [SerializeField] private float moveSpeed = 5f;
+        [SerializeField] public float moveSpeed = 5f;
         
-        private CharacterController controller;
+        public CharacterController controller;
         private void Awake() => controller = GetComponent<CharacterController>();
 
         public void Move(Vector3 direction)
@@ -19,4 +19,4 @@ namespace Movement
             controller.SimpleMove(move);
         }
     }
-}
+} 

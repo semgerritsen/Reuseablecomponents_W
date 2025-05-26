@@ -43,7 +43,7 @@ public class OnButtonClick : MonoBehaviour
 
     public void KeyboardInputChosen()
     {
-        player.AddComponent<SwiftMovement>();
+        player.AddComponent<BaseMovement>();
         player.AddComponent<KeyboardInput>();
         player.AddComponent<PlayerMove>();
         player.GetComponentInChildren<Camera>()?.gameObject.AddComponent<MouseLook>();

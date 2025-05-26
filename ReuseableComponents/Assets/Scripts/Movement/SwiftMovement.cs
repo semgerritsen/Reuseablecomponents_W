@@ -4,16 +4,21 @@ using UnityEngine;
 
 namespace Movement
 {
-    [RequireComponent(typeof(CharacterController))]
     public class SwiftMovement : MonoBehaviour, IMovement
     {
         [Header("Movement speeds")]
         [SerializeField] private float walkSpeed       = 5f;
         [SerializeField] private float sprintMultiplier = 1.8f;
-
-        private CharacterController controller;
         
-        private void Awake() => controller = GetComponent<CharacterController>();
+        private BaseMovement movement;
+
+        // private CharacterController controller;
+        
+        private void Start()
+        {
+            // controller = GetComponent<CharacterController>();
+            movement = FindAnyObjectByType<BaseMovement>();
+        }
 
         public void Move(Vector3 direction)
         {
@@ -27,7 +32,7 @@ namespace Movement
                 speed = walkSpeed;
             
             Vector3 move = direction.normalized * speed;
-            controller.SimpleMove(move);
+            movement.controller.SimpleMove(move);
         }
     }
 }
