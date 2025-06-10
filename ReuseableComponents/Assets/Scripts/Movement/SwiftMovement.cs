@@ -10,15 +10,8 @@ namespace Movement
         [SerializeField] private float walkSpeed       = 5f;
         [SerializeField] private float sprintMultiplier = 1.8f;
         
-        private BaseMovement movement;
-
-        // private CharacterController controller;
-        
-        private void Start()
-        {
-            // controller = GetComponent<CharacterController>();
-            movement = FindAnyObjectByType<BaseMovement>();
-        }
+        private BaseMovement baseMovement => FindFirstObjectByType<BaseMovement>();
+        private CharacterController controller => GetComponent<CharacterController>();
 
         public void Move(Vector3 direction)
         {
@@ -32,7 +25,7 @@ namespace Movement
                 speed = walkSpeed;
             
             Vector3 move = direction.normalized * speed;
-            movement.controller.SimpleMove(move);
+            controller.SimpleMove(move);
         }
     }
 }

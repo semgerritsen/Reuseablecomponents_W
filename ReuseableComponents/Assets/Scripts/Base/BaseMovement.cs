@@ -8,7 +8,7 @@ namespace Movement
     public class BaseMovement : MonoBehaviour, IMovement
     {
         [Header("Movement speed")]
-        [SerializeField] public float moveSpeed = 5f;
+        [SerializeField] public float moveSpeed = 7.5f;
         
         public CharacterController controller;
         private void Awake() => controller = GetComponent<CharacterController>();

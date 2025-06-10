@@ -4,8 +4,8 @@ using UnityEngine;
 [RequireComponent(typeof(BaseMovement))]
 public class EnemyTrack : MonoBehaviour
 {
-        BaseMovement baseMovement;
         [SerializeField] private Transform target;
+        BaseMovement baseMovement;
         private void Awake()
         {
             baseMovement = FindFirstObjectByType<BaseMovement>();
@@ -13,12 +13,15 @@ public class EnemyTrack : MonoBehaviour
     
         private void Update()
         {
-            if (target == null)
+            if (target == null || Vector3.Distance(transform.position, target.position) < 2f)
             {
                 return;
             }
             Vector3 direction = (target.position - transform.position).normalized;
             baseMovement.Move(direction);
-            transform.LookAt(target);
+            
+            Vector3 targetPosition = new Vector3(target.position.x, transform.position.y, target.position.z);
+            transform.LookAt(targetPosition);
+
         }
 }
