@@ -4,8 +4,11 @@ using UnityEngine;
 [RequireComponent(typeof(BaseMovement))]
 public class EnemyTrack : MonoBehaviour
 {
+        [Header("set player target")]
         [SerializeField] private Transform target;
+        
         BaseMovement baseMovement;
+        
         private void Awake()
         {
             baseMovement = FindFirstObjectByType<BaseMovement>();

@@ -1,4 +1,5 @@
 using System;
+using DefaultNamespace;
 using Movement;
 using Movement.inputs;
 using UnityEngine;
@@ -46,9 +47,13 @@ public class OnButtonClick : MonoBehaviour
         player.AddComponent<BaseMovement>();
         player.AddComponent<KeyboardInput>();
         player.AddComponent<PlayerMove>();
+        player.AddComponent<BaseHealth>();
         player.GetComponentInChildren<Camera>()?.gameObject.AddComponent<MouseLook>();
+        
         Cursor.lockState = CursorLockMode.Locked;
+        
         inputPanel.SetActive(false);
+        
         Time.timeScale = 1f;
     }
 }
