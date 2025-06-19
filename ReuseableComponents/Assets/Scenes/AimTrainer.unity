@@ -132,8 +132,8 @@ GameObject:
   - component: {fileID: 22023690}
   - component: {fileID: 22023689}
   - component: {fileID: 22023693}
-  - component: {fileID: 22023695}
   - component: {fileID: 22023694}
+  - component: {fileID: 22023695}
   m_Layer: 0
   m_Name: Yellow Target
   m_TagString: Untagged
@@ -2074,8 +2074,8 @@ GameObject:
   - component: {fileID: 631830568}
   - component: {fileID: 631830567}
   - component: {fileID: 631830566}
-  - component: {fileID: 631830565}
   - component: {fileID: 631830564}
+  - component: {fileID: 631830565}
   - component: {fileID: 631830563}
   m_Layer: 0
   m_Name: Orange Target
@@ -2363,10 +2363,9 @@ GameObject:
   - component: {fileID: 687603219}
   - component: {fileID: 687603218}
   - component: {fileID: 687603222}
+  - component: {fileID: 687603223}
   - component: {fileID: 687603225}
   - component: {fileID: 687603224}
-  - component: {fileID: 687603223}
-  - component: {fileID: 687603226}
   m_Layer: 0
   m_Name: Pink Target
   m_TagString: Untagged
@@ -2519,21 +2518,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
---- !u!114 &687603226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 687603217}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91858b19cdf34662abdbfd4118b16f1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 2
-  amplitude: 5
-  frequency: 1
 --- !u!1 &699354155
 GameObject:
   m_ObjectHideFlags: 0
@@ -4295,9 +4279,9 @@ GameObject:
   - component: {fileID: 1552769457}
   - component: {fileID: 1552769456}
   - component: {fileID: 1552769460}
+  - component: {fileID: 1552769461}
   - component: {fileID: 1552769463}
   - component: {fileID: 1552769462}
-  - component: {fileID: 1552769461}
   m_Layer: 0
   m_Name: red Target
   m_TagString: Untagged
