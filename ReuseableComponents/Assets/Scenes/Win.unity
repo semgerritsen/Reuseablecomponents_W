@@ -563,7 +563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 703d9d3eb7be0ee419175a9643efe26c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: TestScene
+  sceneToLoad: TargetFrenzy
   player: {fileID: 0}
   inputPanel: {fileID: 0}
 --- !u!114 &308259190

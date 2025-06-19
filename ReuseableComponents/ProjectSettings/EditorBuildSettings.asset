@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 083d6169350c4694b8f0ff8145691668
   - enabled: 1
-    path: Assets/Scenes/AimTrainer.unity
+    path: Assets/Scenes/TargetFrenzy.unity
     guid: 767d30940e5a58049bc8945f4d4ead0c
   - enabled: 1
     path: Assets/Scenes/Lose.unity
