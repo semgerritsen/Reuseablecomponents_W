@@ -1,16 +1,29 @@
+using Targets;
+using UI;
 using UnityEngine;
 
 public class BaseTarget : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private int pointsWorth;
+
+    protected CollisionHandler collisionHandler;
+    protected DisplayScore displayScore;
+
+    protected virtual void Awake()
     {
-        
+        collisionHandler = GetComponent<CollisionHandler>();
+        displayScore = GetComponent<DisplayScore>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public int GetPoints()
     {
-        
+        return pointsWorth;
+    }
+
+    public virtual void OnHit()
+    {
+        // Debug.Log($"Target hit! Worth {pointsWorth} points.");
+        displayScore.AddPoints(pointsWorth);
+        // Implement basic behavior or let derived classes override
     }
 }

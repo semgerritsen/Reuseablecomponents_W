@@ -9,7 +9,6 @@ namespace Weapons
         private GameObject bulletPrefab;
 
         [SerializeField] private float bulletSpeed = 100f;
-        [SerializeField] private float damage = 1f;
         [SerializeField] private float fireRate = 0.5f;
         [SerializeField] Transform firePoint;
         private float nextFireTime = 0f;
@@ -26,16 +25,26 @@ namespace Weapons
         public void Fire()
         {
             if (bulletPrefab == null || firePoint == null) return;
-            
+
+            // Cast a ray from the center of the screen (crosshair)
             Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
-            Vector3 targetDirection = ray.direction;
-            
-            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.LookRotation(targetDirection));
+
+            // Calculate the target point (a far point in the ray direction)
+            Vector3 targetPoint = ray.origin + ray.direction * 1000f;
+
+            // Calculate direction from the firePoint (gun) to that target point
+            Vector3 direction = (targetPoint - firePoint.position).normalized;
+
+            // Instantiate the bullet at the firePoint and rotate it to face the target
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.LookRotation(direction));
+
+            // Apply velocity
             Rigidbody rb = bullet.GetComponent<Rigidbody>();
             if (rb != null)
             {
-                rb.linearVelocity = targetDirection.normalized * bulletSpeed;
+                rb.linearVelocity = direction * bulletSpeed;
             }
+            
         }
     }
 }

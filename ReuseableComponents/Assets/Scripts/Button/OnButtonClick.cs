@@ -33,7 +33,7 @@ public class OnButtonClick : MonoBehaviour
 
     public void ControllerInputChosen()
     {
-        player.AddComponent<SwiftMovement>();
+        player.AddComponent<BaseMovement>();
         player.AddComponent<ControllerInput>();
         player.AddComponent<PlayerMove>();
         // player.GetComponentInChildren<Camera>()?.gameObject.AddComponent<ControllerLook>();
@@ -47,7 +47,6 @@ public class OnButtonClick : MonoBehaviour
         player.AddComponent<BaseMovement>();
         player.AddComponent<KeyboardInput>();
         player.AddComponent<PlayerMove>();
-        player.AddComponent<BaseHealth>();
         player.GetComponentInChildren<Camera>()?.gameObject.AddComponent<MouseLook>();
         
         Cursor.lockState = CursorLockMode.Locked;
