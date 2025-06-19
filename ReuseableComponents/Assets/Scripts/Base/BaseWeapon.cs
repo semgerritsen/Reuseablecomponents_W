@@ -14,14 +14,14 @@ namespace Weapons
         [SerializeField] Transform firePoint;
         private float nextFireTime = 0f;
 
-        // private void Update()
-        // {
-        //     if (Input.GetMouseButton(0) && Time.time >= nextFireTime)
-        //     {
-        //         Fire();
-        //         nextFireTime = Time.time + fireRate;
-        //     }
-        // }
+        private void Update()
+        {
+            if (Input.GetMouseButton(0) && Time.time >= nextFireTime)
+            {
+                Fire();
+                nextFireTime = Time.time + fireRate;
+            }
+        }
         
         public void Fire()
         {
