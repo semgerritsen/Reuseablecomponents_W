@@ -1,6 +1,7 @@
 ﻿using Interfaces;
 using UnityEngine;
 
+//TODO: when x amount of bullets are fired, play reload animation so player cant spam 
 namespace Weapons
 {
     public class BaseWeapon : MonoBehaviour, IWeapon

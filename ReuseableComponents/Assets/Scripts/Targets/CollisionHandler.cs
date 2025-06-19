@@ -16,10 +16,10 @@ namespace Targets
 
         private void OnCollisionEnter(Collision collision)
         {
-            // if (baseTarget != null)
-            // {
-            //     baseTarget.OnHit();
-            // }
+            if (baseTarget != null)
+            {
+                baseTarget.OnHit();
+            }
             Destroy(collision.gameObject);
         }
     }

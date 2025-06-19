@@ -20,11 +20,16 @@ namespace UI
 
             UpdateText();
         }
-        public void AddPoints(int amount)
+        public void SetPoints(int points)
         {
-            currentPoints += amount;
+            currentPoints = points;
             UpdateText();
         }
+        // public void AddPoints(int amount)
+        // {
+        //     currentPoints += amount;
+        //     UpdateText();
+        // }
 
         private void UpdateText()
         {
