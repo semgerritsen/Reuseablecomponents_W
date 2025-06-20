@@ -6,8 +6,8 @@ namespace DefaultNamespace
 {
     public class BaseHealth : MonoBehaviour, IHealth
     {
-        [SerializeField] float maxHealth = 3;
-        [SerializeField] float health;
+        [SerializeField] private float maxHealth = 3;
+        [SerializeField] private float health;
 
         public void Start()
         {

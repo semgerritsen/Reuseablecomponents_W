@@ -5,7 +5,12 @@ namespace Base
 {
     public class TargetBaseMovement : MonoBehaviour
     {
-        [SerializeField] protected float moveSpeed = 2f;
+        protected float moveSpeed;
+        public float MoveSpeed
+        {
+            get => moveSpeed;
+            set => moveSpeed = value;
+        }
 
         public void Move(Vector3 direction)
         {
