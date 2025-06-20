@@ -5,12 +5,7 @@ namespace Base
 {
     public class TargetBaseMovement : MonoBehaviour
     {
-        protected float moveSpeed;
-        public float MoveSpeed
-        {
-            get => moveSpeed;
-            set => moveSpeed = value;
-        }
+        protected float moveSpeed =2f;
 
         public void Move(Vector3 direction)
         {
