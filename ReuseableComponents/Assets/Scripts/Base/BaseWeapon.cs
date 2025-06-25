@@ -27,13 +27,13 @@ namespace Weapons
         {
             if (bulletPrefab == null || firePoint == null) return;
 
-            // Cast a ray from the center of the screen (crosshair)
+            // Cast a ray from the center of the screen
             Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
 
-            // Calculate the target point (a far point in the ray direction)
+            // Calculate the target point
             Vector3 targetPoint = ray.origin + ray.direction * 1000f;
 
-            // Calculate direction from the firePoint (gun) to that target point
+            // Calculate direction from the firePoint to that target point
             Vector3 direction = (targetPoint - firePoint.position).normalized;
 
             // Instantiate the bullet at the firePoint and rotate it to face the target

@@ -1,16 +1,16 @@
 using System;
-using DefaultNamespace;
 using Movement;
 using Movement.inputs;
 using UnityEngine;
 using UnityEngine.InputSystem.LowLevel;
+using UnityEngine.Serialization;
 using UnityEngine.Timeline;
 
 public class OnButtonClick : MonoBehaviour
 {
     [SerializeField] private string sceneToLoad;
     [SerializeField] private GameObject player;
-    [SerializeField] private GameObject inputPanel;
+    [FormerlySerializedAs("inputPanel")] [SerializeField] private GameObject Panel;
 
     public void LoadScene()
     {
@@ -25,6 +25,16 @@ public class OnButtonClick : MonoBehaviour
         Time.timeScale = 0f;
     }
 
+    public void OpenPanel()
+    {
+        Panel.SetActive(true);
+    }
+
+    public void ClosePanel()
+    {
+        Panel.SetActive(false);
+    }
+
     public void OnApplicationQuit()
     {
         Application.Quit();
@@ -36,9 +46,9 @@ public class OnButtonClick : MonoBehaviour
         player.AddComponent<BaseMovement>();
         player.AddComponent<ControllerInput>();
         player.AddComponent<PlayerMove>();
-        // player.GetComponentInChildren<Camera>()?.gameObject.AddComponent<ControllerLook>();
+        player.GetComponentInChildren<Camera>()?.gameObject.AddComponent<ControllerLook>();
         Cursor.lockState = CursorLockMode.Locked;
-        inputPanel.SetActive(false);
+        ClosePanel();
         Time.timeScale = 1f;
     }
 
@@ -48,11 +58,8 @@ public class OnButtonClick : MonoBehaviour
         player.AddComponent<KeyboardInput>();
         player.AddComponent<PlayerMove>();
         player.GetComponentInChildren<Camera>()?.gameObject.AddComponent<MouseLook>();
-        
         Cursor.lockState = CursorLockMode.Locked;
-        
-        inputPanel.SetActive(false);
-        
+        ClosePanel();
         Time.timeScale = 1f;
     }
 }
