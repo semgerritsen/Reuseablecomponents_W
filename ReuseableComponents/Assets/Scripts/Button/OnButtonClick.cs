@@ -1,16 +1,16 @@
 using System;
-using DefaultNamespace;
 using Movement;
 using Movement.inputs;
 using UnityEngine;
 using UnityEngine.InputSystem.LowLevel;
+using UnityEngine.Serialization;
 using UnityEngine.Timeline;
 
 public class OnButtonClick : MonoBehaviour
 {
     [SerializeField] private string sceneToLoad;
     [SerializeField] private GameObject player;
-    [SerializeField] private GameObject inputPanel;
+    [FormerlySerializedAs("inputPanel")] [SerializeField] private GameObject Panel;
 
     public void LoadScene()
     {
@@ -31,6 +31,15 @@ public class OnButtonClick : MonoBehaviour
         Debug.Log("Application is quitting");
     }
 
+    public void ClosePanel()
+    {
+        Panel.SetActive(false);
+    }
+    public void OpenPanel()
+    {
+        Panel.SetActive(true);
+    }
+
     public void ControllerInputChosen()
     {
         player.AddComponent<BaseMovement>();
@@ -38,7 +47,7 @@ public class OnButtonClick : MonoBehaviour
         player.AddComponent<PlayerMove>();
         // player.GetComponentInChildren<Camera>()?.gameObject.AddComponent<ControllerLook>();
         Cursor.lockState = CursorLockMode.Locked;
-        inputPanel.SetActive(false);
+        ClosePanel();
         Time.timeScale = 1f;
     }
 
@@ -51,7 +60,7 @@ public class OnButtonClick : MonoBehaviour
         
         Cursor.lockState = CursorLockMode.Locked;
         
-        inputPanel.SetActive(false);
+        ClosePanel();
         
         Time.timeScale = 1f;
     }

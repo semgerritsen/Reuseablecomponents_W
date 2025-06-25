@@ -8,8 +8,8 @@ namespace Targets
     {
         [SerializeField] private float amplitude = 2f;
         [SerializeField] private float frequency = 1f;
+        
         private Vector3 startPosition;
-
         private IMovement movement;
 
         private void Awake()

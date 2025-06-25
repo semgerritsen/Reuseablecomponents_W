@@ -6,6 +6,10 @@ public class BaseTarget : MonoBehaviour
 {
     [SerializeField] private int pointsWorth;
 
+    public int PointsWorth
+    {
+        get => pointsWorth;
+    }
     protected CollisionHandler collisionHandler;
     protected DisplayScore displayScore;
 
