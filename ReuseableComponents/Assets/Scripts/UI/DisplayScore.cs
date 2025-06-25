@@ -25,6 +25,12 @@ namespace UI
             currentPoints = points;
             UpdateText();
         }
+        // public void AddPoints(int amount)
+        // {
+        //     currentPoints += amount;
+        //     UpdateText();
+        // }
+
         private void UpdateText()
         {
             if (scoreText != null)
