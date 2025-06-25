@@ -8,6 +8,8 @@ public class BaseTarget : MonoBehaviour
 
     protected CollisionHandler collisionHandler;
     protected DisplayScore displayScore;
+    
+    public event System.Action onHit;
 
     protected virtual void Awake()
     {
@@ -22,7 +24,10 @@ public class BaseTarget : MonoBehaviour
 
     public virtual void OnHit()
     {
-        // Debug.Log($"Target hit! Worth {pointsWorth} points.");
+        if (onHit != null)
+        {
+            onHit?.Invoke();
+        }
         ScoreManager.Instance.AddPoints(pointsWorth);
     }
 }

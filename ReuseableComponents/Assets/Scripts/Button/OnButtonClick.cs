@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.Serialization;
 using UnityEngine.Timeline;
+using Weapons;
 
 public class OnButtonClick : MonoBehaviour
 {
@@ -46,6 +47,8 @@ public class OnButtonClick : MonoBehaviour
         player.AddComponent<BaseMovement>();
         player.AddComponent<ControllerInput>();
         player.AddComponent<PlayerMove>();
+        // player.GetComponentInChildren<Camera>()?.transform.GetChild(0)?.gameObject.AddComponent<BaseWeapon>();
+        player.GetComponentInChildren<Camera>()?.transform.GetChild(0)?.gameObject.AddComponent<ControllerAimInput>();
         player.GetComponentInChildren<Camera>()?.gameObject.AddComponent<ControllerLook>();
         Cursor.lockState = CursorLockMode.Locked;
         ClosePanel();
@@ -57,6 +60,8 @@ public class OnButtonClick : MonoBehaviour
         player.AddComponent<BaseMovement>();
         player.AddComponent<KeyboardInput>();
         player.AddComponent<PlayerMove>();
+        // player.GetComponentInChildren<Camera>()?.transform.GetChild(0)?.gameObject.AddComponent<BaseWeapon>();
+        player.GetComponentInChildren<Camera>()?.transform.GetChild(0)?.gameObject.AddComponent<MouseAimInput>();
         player.GetComponentInChildren<Camera>()?.gameObject.AddComponent<MouseLook>();
         Cursor.lockState = CursorLockMode.Locked;
         ClosePanel();

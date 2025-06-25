@@ -1,4 +1,5 @@
-﻿using Interfaces;
+﻿using System;
+using Interfaces;
 using UnityEngine;
 
 //TODO: when x amount of bullets are fired, play reload animation so player cant spam 
@@ -12,10 +13,24 @@ namespace Weapons
         [SerializeField] private float bulletSpeed = 100f;
         [SerializeField] private float fireRate = 0.5f;
         [SerializeField] Transform firePoint;
+        
         private float nextFireTime = 0f;
+        private IAimInput aimInput;
+
+        private void Start()
+        {
+            aimInput = GetComponent<IAimInput>();
+        }
 
         private void Update()
         {
+            // omdat baseweapon al bestaat voor de controllerinput en mouseaiminput, komt er een nullreference error. dit is niet de meest effieciënte manier, maar het werkt wel
+            if (aimInput == null)
+            {
+                aimInput = GetComponent<IAimInput>();
+                if (aimInput == null) return;
+            }
+            
             if (Input.GetMouseButton(0) && Time.time >= nextFireTime)
             {
                 Fire();
@@ -27,23 +42,20 @@ namespace Weapons
         {
             if (bulletPrefab == null || firePoint == null) return;
 
-            // Cast a ray from the center of the screen
-            Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
-
-            // Calculate the target point
-            Vector3 targetPoint = ray.origin + ray.direction * 1000f;
-
-            // Calculate direction from the firePoint to that target point
+            Ray aimRay = aimInput.GetAimDirection();
+            
+            Vector3 targetPoint = aimRay.origin + aimRay.direction * bulletSpeed;
             Vector3 direction = (targetPoint - firePoint.position).normalized;
-
-            // Instantiate the bullet at the firePoint and rotate it to face the target
-            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.LookRotation(direction));
-
-            // Apply velocity
-            Rigidbody rb = bullet.GetComponent<Rigidbody>();
-            if (rb != null)
+            
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+            Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
+            if (bulletRb != null)
             {
-                rb.linearVelocity = direction * bulletSpeed;
+                bulletRb.linearVelocity = direction * bulletSpeed;
+            }
+            else
+            {
+                Debug.LogWarning("Bullet prefab does not have a Rigidbody component.");
             }
             
         }

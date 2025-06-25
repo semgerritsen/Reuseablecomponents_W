@@ -4,6 +4,6 @@ namespace Interfaces
 {
     public interface IAimInput
     {
-        Ray GetAimRay();
+        Ray GetAimDirection();
     }
 }
