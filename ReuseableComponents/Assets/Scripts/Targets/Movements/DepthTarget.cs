@@ -1,11 +1,12 @@
 ﻿using System;
 using Base;
+using Interfaces;
 using UnityEngine;
 
 
 namespace Targets
 {
-    public class DepthTarget : TargetBaseMovement
+    public class DepthTarget : MonoBehaviour
     {
         [SerializeField] private float amplitude = 5f;
         [SerializeField] private float frequency = 1f;
@@ -14,9 +15,11 @@ namespace Targets
         
         private Vector3 startPosition;
 
+        private IMovement movement;
+
         private void Awake()
         {
-            
+            movement = GetComponent<IMovement>();
         }
 
         private void Start()
@@ -29,7 +32,7 @@ namespace Targets
             float xOffset = Mathf.Sin(Time.time * frequency) * amplitude;
             Vector3 targetPosition = startPosition + Vector3.back * xOffset;
             Vector3 direction = targetPosition - transform.position;
-            Move(direction);
+            movement.Move(direction);
         }
     }
 }

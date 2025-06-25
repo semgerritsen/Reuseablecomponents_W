@@ -1,16 +1,16 @@
 ﻿using System;
+using Interfaces;
 using UnityEngine;
 
 namespace Base
 {
-    public class TargetBaseMovement : MonoBehaviour
+    public class TargetBaseMovement : MonoBehaviour, IMovement
     {
-        protected float moveSpeed =2f;
+        [SerializeField] float moveSpeed = 2f;
 
         public void Move(Vector3 direction)
         {
             transform.position += direction.normalized * (moveSpeed * Time.deltaTime);
-            Console.WriteLine("Moving in direction: " + direction.normalized + " with speed: " + moveSpeed);
         }
     }
 }
