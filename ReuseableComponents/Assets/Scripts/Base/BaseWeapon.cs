@@ -2,7 +2,6 @@
 using Interfaces;
 using UnityEngine;
 
-//TODO: when x amount of bullets are fired, play reload animation so player cant spam 
 namespace Weapons
 {
     public class BaseWeapon : MonoBehaviour, IWeapon
@@ -15,29 +14,51 @@ namespace Weapons
         [SerializeField] Transform firePoint;
         
         private float nextFireTime = 0f;
+        
         private IAimInput aimInput;
+        private IWeaponInput weaponInput;
 
         private void Start()
         {
             aimInput = GetComponent<IAimInput>();
+            weaponInput = GetComponent<IWeaponInput>();
         }
 
         private void Update()
         {
             // omdat baseweapon al bestaat voor de controllerinput en mouseaiminput, komt er een nullreference error. dit is niet de meest effieciënte manier, maar het werkt wel
-            if (aimInput == null)
+            if (CheckAimInput()) return;
+            if (CheckWeaponInput()) return;
+
+            if (weaponInput != null && weaponInput.IsFiring() && Time.time >= nextFireTime)
             {
-                aimInput = GetComponent<IAimInput>();
-                if (aimInput == null) return;
-            }
-            
-            if (Input.GetMouseButton(0) && Time.time >= nextFireTime)
-            {
+                Debug.Log(weaponInput.IsFiring());
                 Fire();
                 nextFireTime = Time.time + fireRate;
             }
         }
-        
+
+        private bool CheckAimInput()
+        {
+            if (aimInput == null)
+            {
+                aimInput = GetComponent<IAimInput>();
+                if (aimInput == null) return true;
+            }
+
+            return false;
+        }
+        private bool CheckWeaponInput()
+        {
+            if (weaponInput == null)
+            {
+                weaponInput = GetComponent<IWeaponInput>();
+                if (weaponInput == null) return true;
+            }
+
+            return false;
+        }
+
         public void Fire()
         {
             if (bulletPrefab == null || firePoint == null) return;
@@ -49,15 +70,10 @@ namespace Weapons
             
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
             Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
-            if (bulletRb != null)
-            {
-                bulletRb.linearVelocity = direction * bulletSpeed;
-            }
-            else
-            {
-                Debug.LogWarning("Bullet prefab does not have a Rigidbody component.");
-            }
             
+            bulletRb.linearVelocity = direction * bulletSpeed;
+            
+            Destroy(bullet, 3f);
         }
     }
 }

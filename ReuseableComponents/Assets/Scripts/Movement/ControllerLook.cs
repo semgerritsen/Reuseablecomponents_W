@@ -5,7 +5,7 @@ namespace Movement
     public class ControllerLook : MonoBehaviour
     {
         [Header("Controller Look Settings")] [SerializeField]
-        private float sensitivity = 3f;
+        private float sensitivity = 1.5f;
 
         [SerializeField] private float minY = -80f;
         [SerializeField] private float maxY = 80f;

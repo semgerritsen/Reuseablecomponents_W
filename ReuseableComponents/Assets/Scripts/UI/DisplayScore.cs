@@ -1,6 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
+
 
 namespace UI
 {
@@ -25,11 +25,6 @@ namespace UI
             currentPoints = points;
             UpdateText();
         }
-        // public void AddPoints(int amount)
-        // {
-        //     currentPoints += amount;
-        //     UpdateText();
-        // }
 
         private void UpdateText()
         {

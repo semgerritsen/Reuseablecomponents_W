@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace Event
 {
-    //TODO: Targets needs to be in the center of the target area
     public class TargetHitEffect : MonoBehaviour
     {
         [SerializeField] private ParticleSystem particlePrefab;

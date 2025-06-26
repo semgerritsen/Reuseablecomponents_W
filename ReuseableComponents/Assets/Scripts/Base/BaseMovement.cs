@@ -1,7 +1,6 @@
 using Interfaces;
 using UnityEngine;
 
-//todo: use Imovement interface
 namespace Movement
 {
     [RequireComponent(typeof(CharacterController))]
