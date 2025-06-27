@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace Movement.inputs
 {
+    /// <summary>
+    ///  Handles keyboard input for movement.
+    /// </summary>
     public class KeyboardInput : MonoBehaviour , IMovementInput
     {
         [SerializeField] private KeyCode forwardKey = KeyCode.W;

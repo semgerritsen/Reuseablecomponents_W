@@ -13,35 +13,31 @@ public class OnButtonClick : MonoBehaviour
     [SerializeField] private GameObject player;
     [FormerlySerializedAs("inputPanel")] [SerializeField] private GameObject Panel;
 
+    /// <summary>
+    /// Loads the specified scene when the button is clicked.
+    /// </summary>
     public void LoadScene()
     {
+        // Check if the sceneToLoad is not null or empty
         if (sceneToLoad != null)
+            // Load the scene using Unity's SceneManager
             UnityEngine.SceneManagement.SceneManager.LoadScene(sceneToLoad);
-        else
+        else 
+            // Log an error if the scene name is not set
             Debug.LogError("Scene name is not set in the inspector.");
     }
 
     public void Start()
     {
+        // set time scale to 0 to pause the game
         Time.timeScale = 0f;
     }
 
-    public void OpenPanel()
-    {
-        Panel.SetActive(true);
-    }
-
-    public void ClosePanel()
-    {
-        Panel.SetActive(false);
-    }
-
-    public void OnApplicationQuit()
-    {
-        Application.Quit();
-        Debug.Log("Application is quitting");
-    }
-
+    
+    /// <summary>
+    /// this method is called when the player chooses controller input.
+    /// in the method, we add the necessary components to the player GameObject based on the input method chosen.
+    /// </summary>
     public void ControllerInputChosen()
     {
         player.AddComponent<BaseMovement>();
@@ -67,4 +63,25 @@ public class OnButtonClick : MonoBehaviour
         ClosePanel();
         Time.timeScale = 1f;
     }
+
+    /// <summary>
+    /// method to close the input panel when the player chooses an input method.
+    /// This method is called when the player selects either controller or keyboard input.
+    /// It sets the Panel GameObject to inactive, effectively closing it.
+    /// </summary>
+    public void ClosePanel()
+    {
+        Panel.SetActive(false);
+    }
+
+    /// <summary>
+    ///  This method is called when the user clicks the quit button.
+    /// </summary>
+    public void OnApplicationQuit()
+    {
+        Application.Quit();
+        Debug.Log("Application is quitting");
+    }
+    
+    
 }

@@ -14,6 +14,7 @@ namespace Movement
         }
         private void Update()
         {
+            
             Vector3 dir = transform.TransformDirection(movementInput.GetMovementDirection());
             movement.Move(dir);
         }

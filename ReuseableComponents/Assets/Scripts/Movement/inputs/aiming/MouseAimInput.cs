@@ -7,6 +7,7 @@ namespace Movement.inputs
     {
         public Ray GetAimDirection()
         {
+            // Get the mouse position in screen coordinates
             return Camera.main.ScreenPointToRay(Input.mousePosition);
         }
     }

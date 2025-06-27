@@ -11,9 +11,11 @@ namespace Movement.inputs
 
         private void Awake()
         {
+            // Find the controller origin in the scene
             if (controllerOrigin == null)
             {
                 Camera mainCam = Camera.main;
+                // If no main camera is found, try to find the first camera in the scene
                 if (mainCam != null)
                 {
                     controllerOrigin = mainCam.transform;
@@ -23,6 +25,7 @@ namespace Movement.inputs
 
         public Ray GetAimDirection()
         {
+            // Get the input from the controller's aim sticks
             float horizontal = Input.GetAxis("AimHorizontal");
             float vertical = Input.GetAxis("AimVertical");
 
@@ -40,6 +43,7 @@ namespace Movement.inputs
             // Calculate fake screen position based on stick input
             Vector2 stickOffset = input.normalized * aimSensitivity;
 
+            // Calculate the = position based on the center of the screen and the stick offset
             Vector3 screenCenter = new Vector3(Screen.width / 2f, Screen.height / 2f, 0);
             Vector3 virtualCursorPos = screenCenter + new Vector3(stickOffset.x, stickOffset.y, 0);
 

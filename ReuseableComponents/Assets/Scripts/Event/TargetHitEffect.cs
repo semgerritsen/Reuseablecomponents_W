@@ -15,6 +15,10 @@ namespace Event
             baseTarget.onHit += () => PlayEffect(baseTarget.transform.position);
         }
 
+        /// <summary>
+        ///  Plays the particle effect at the specified position of the basetarget.
+        /// </summary>
+        /// <param name="position"></param>
         private void PlayEffect(Vector3 position)
         {
             if (particlePrefab != null)
